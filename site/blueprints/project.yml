@@ -1,0 +1,89 @@
+title: Project
+files: true
+pages: false
+files:
+  fields:
+    caption:
+      label: Caption
+      type: textarea
+      buttons:
+        - link
+        - email
+    # contentsize:
+    #   label: Size
+    #   type: radio
+    #   default: fullscreen
+    #   options:
+    #     contain: Contain
+    #     fullscreen: Fullscreen
+      columns: 2
+    videolink:
+      label: Video ID
+      type: text
+      icon: code
+      help: Youtube ID or Vimeo ID
+    vendor:
+      label: Vendor
+      type: radio
+      default: vimeo
+      options:
+        vimeo: Vimeo 
+        youtube: Youtube
+    # thumbnailInfos:
+    #   label: Get thumbnail
+    #   type: info
+    #   text: >
+    #     Youtube:
+    #     http://img.youtube.com/vi/{VIDEO ID}/hqdefault.jpg
+        
+    #     Vimeo:
+    #     http://vimeo.com/api/v2/video/{VIDEO ID}.php
+    videostream:
+      label: Video external stream link (.m3u8)
+      type: url
+    videoexternal:
+      label: Video external file link
+      type: url
+    videofile:
+      label: Video File (.MP4)
+      type: select
+      options: videos
+    videofilewebm:
+      label: Video File (.WEBM)
+      type: select
+      options: videos
+fields:
+  reveal: reveal
+  prevnext: prevnext
+  title:
+    label: Title
+    type:  text
+    width: 1/2
+  featured:
+    label: Featured image
+    type: image
+    help: For social medias
+    width: 1/4
+  date:
+    label: Year
+    type:  date
+    format: YYYY
+    width: 1/4
+  client:
+    label: Client
+    type:  text
+    width: 2/4
+  padding:
+    label: Padding
+    type: rangeslider
+    min: 0
+    max: 45
+    step: 1
+    postfix: "%"
+    width: 1/2
+  text:
+    label: Description
+    type: textarea
+  medias:
+    label: Images
+    type: images

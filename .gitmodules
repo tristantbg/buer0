@@ -1,0 +1,33 @@
+[submodule "kirby"]
+	path = kirby
+	url = git://github.com/getkirby/kirby.git
+[submodule "panel"]
+	path = panel
+	url = git://github.com/getkirby/panel.git
+[submodule "toolkit"]
+	path = kirby/toolkit
+	url = git://github.com/getkirby/toolkit.git
+[submodule "site/fields/builder"]
+	path = site/fields/builder
+	url = https://github.com/TimOetting/kirby-builder.git
+[submodule "site/plugins/kirby-panel-prevnext"]
+	path = site/plugins/kirby-panel-prevnext
+	url = https://github.com/jenstornell/kirby-panel-prevnext
+[submodule "site/plugins/imagekit"]
+	path = site/plugins/imagekit
+	url = https://github.com/fabianmichael/kirby-imagekit.git
+[submodule "site/plugins/images"]
+	path = site/plugins/images
+	url = https://github.com/medienbaecker/kirby-images.git
+[submodule "site/plugins/typography"]
+	path = site/plugins/typography
+	url = https://github.com/fabianmichael/kirby-typography.git
+[submodule "site/plugins/field-engineer"]
+	path = site/plugins/field-engineer
+	url = https://github.com/jenstornell/field-engineer
+[submodule "site/fields/rangeslider"]
+	path = site/fields/rangeslider
+	url = https://github.com/JonasDoebertin/kirby-range-slider.git
+[submodule "site/plugins/sortable"]
+	path = site/plugins/sortable
+	url = https://github.com/lukaskleinschmidt/kirby-sortable.git

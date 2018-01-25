@@ -1,0 +1,17 @@
+#texts
+	span(1)
+	padding 0 ($padding*2)
+	+below($md)
+		padding 0 $paddingMobile
+	.text
+		span(1)
+		float right
+		max-height 0
+		transition max-height .6s $kinetic
+		overflow hidden
+		text-align right
+		+above($md + 1)
+			padding-left 80%
+		p
+			padding-bottom $padding
+			line-height 1.7

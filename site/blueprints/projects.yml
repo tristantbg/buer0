@@ -1,0 +1,19 @@
+title: Projects
+pages: project
+files: false
+fields:
+  reveal: reveal
+  title:
+    label: Title
+    type:  text
+  sortable:
+    label: Projects
+    type:  sortable
+    sortable: true
+    layout:  base
+    variant: null
+    limit: false
+    parent: null
+    prefix: null
+    options:
+      limit: false

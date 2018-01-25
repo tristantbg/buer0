@@ -1,0 +1,76 @@
+webfont('LaborAlexRegular', 'LaborAlexRegular', false, 'normal')
+
+*
+	box-sizing border-box
+
+body,html
+	width 100%
+	-webkit-text-size-adjust 100%
+	background $primary
+
+html
+	font-size 10px
+	+below($md)
+		// font-size 10px
+
+body
+	font-family 'LaborAlexRegular', Helvetica Neue, Arial, sans-serif
+	font-size $font
+	line-height 1
+	color $grey
+	text-rendering optimizeLegibility
+	font-smoothing()
+
+h1, h2, h3
+	font-size $font
+	text-transform uppercase
+	margin 0
+	line-height 1
+
+p
+	margin-top 0
+	margin-bottom 1em
+	line-height 1
+
+p:last-child
+	margin-bottom 0
+
+::-webkit-scrollbar
+	display none
+
+::selection
+	background alpha($secondary, 0.2)
+	
+::-moz-selection
+	background alpha($secondary, 0.2)
+
+a, a:hover, a:visited, a:focus
+	color inherit
+	text-decoration none
+	cursor pointer
+
+a:hover
+	+above($md + 1)
+		color $accent
+
+a.active
+	color $accent
+
+.lazy, .plyr
+	transition opacity 300ms ease
+	opacity 0
+
+.lazy.lazyloaded, .lazy.flickity-lazyloaded, .lazy.flickity-bg-lazyloaded, .plyr.plyr--ready
+	opacity 1
+
+video::-webkit-media-controls
+	display none !important
+
+#main
+	span(1)
+
+#container
+	span(1)
+
+#page-content
+	span(1)

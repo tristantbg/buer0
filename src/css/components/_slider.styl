@@ -1,0 +1,114 @@
+.slider
+	span(1)
+	padding 0 ($padding*2)
+	margin-bottom ($padding*2)
+	+below($md)
+		padding 0 $paddingMobile
+		margin-bottom ($paddingMobile*2)
+
+.post
+	span(1)
+	overflow hidden
+	height auto
+	position relative
+	hideselect()
+	background $lightgrey
+	.flickity-slider
+		width 100%
+		height 100%
+	.scene
+		width 100%
+		height 100%
+		position relative
+		z-index 2
+		.content
+			width 100%
+			display flex
+			justify-content center
+			align-items center
+			img
+				width 100%
+				height 100%
+				object-fit cover
+		.content.video
+			width 100%
+			height 100%
+			.plyr--video
+				height 100%
+				&.plyr--vimeo, &.plyr--youtube
+					.plyr__video-wrapper
+						align()
+				.plyr__video-wrapper
+					width 100%
+					height 100%
+			.plyr--ready
+				width 100%
+				height 100%
+			video
+				width 100%
+				height 100%
+				object-fit cover
+	.flickity-prev-next-button
+		cursor none !important
+		width 50%
+		height 100%
+		background transparent
+		padding 0
+		border none
+		border-radius 0
+		z-index 10
+		+below($md)
+			display none
+		&:not(:hover)
+			svg
+				visibility hidden
+		svg
+			align()
+			width 1.8rem
+			height 1.8rem
+			path
+				fill $lightgrey
+		&.previous
+			left 0
+		&.next
+			right 0
+		&[disabled]
+			display none
+	&[data-media="video"]
+		.flickity-prev-next-button
+			width 20%
+		.plyr__controls
+			cursor auto
+			+below($md)
+				display none
+		.plyr--stopped
+			.plyr__controls
+				opacity 0
+
+.plyr__controls
+	display none
+
+.plyr__play-large
+	padding 50px
+	background transparent
+	border none
+	color $primary
+	box-shadow none
+	outline 0
+	&:hover, &:active, &:focus
+		outline 0
+	svg
+		width 50px
+		height 50px
+
+.plyr--playing .plyr__play-large
+	visibility visible
+
+.caption
+	span(1)
+	text-align center
+	margin-top 1em
+	p
+		padding 0 $padding
+		+below($md)
+			padding 0 $paddingMobile
