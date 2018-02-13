@@ -4,6 +4,7 @@
 
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="google-site-verification" content="vr1WjL-Njq48OG87EqLro1nV5XnHX2oJVWOvGXmnP70" />
 	<link rel="dns-prefetch" href="//www.google-analytics.com">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<link rel="canonical" href="<?php echo html($page->url()) ?>" />
@@ -58,7 +59,7 @@
 	<link rel="icon" href="<?= url('assets/images/favicon.ico') ?>" type="image/x-icon">
 
 	<?php 
-	echo css('assets/css/build/build.min.css?=v4.1');
+	echo css('assets/css/build/build.min.css');
 	echo js('assets/js/vendor/modernizr.min.js');
 	?>
 	

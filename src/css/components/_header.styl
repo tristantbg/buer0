@@ -1,9 +1,8 @@
 header
-	span(1)
-	// width 100%
-	// display inline-flex
-	// justify-content space-between
-	padding $padding ($padding*2) 0
+	width 100%
+	display inline-flex
+	justify-content space-between
+	padding ($padding*2) ($padding*2) 0
 	z-index 100
 	+below($md)
 		padding $paddingMobile $paddingMobile 0
@@ -14,23 +13,52 @@ header
 		margin 0
 		display none
 	#site-title
-		height 2rem
-		float right
-		margin-bottom $padding
-		+below($md)
-			margin-bottom $paddingMobile
+		height $logo
 		svg
 			height 100%
 	#menu
-		width 100%
-		display block
-		float right
-		margin-bottom 2rem
 		a
-			width 100%
 			display block
+			width 100%
 			float left
 			text-align right
-			text-transform uppercase
+			// text-transform uppercase
 			&:not(:last-child)
 				margin-bottom 0.7em
+
+// header
+// 	span(1)
+// 	// width 100%
+// 	// display inline-flex
+// 	// justify-content space-between
+// 	padding $padding ($padding*2) 0
+// 	z-index 100
+// 	+below($md)
+// 		padding $paddingMobile $paddingMobile 0
+// 	h1
+// 		color $grey
+// 		font-size ($font*2)
+// 		line-height 1
+// 		margin 0
+// 		display none
+// 	#site-title
+// 		height 2rem
+// 		float right
+// 		margin-bottom $padding
+// 		+below($md)
+// 			margin-bottom $paddingMobile
+// 		svg
+// 			height 100%
+// 	#menu
+// 		width 100%
+// 		display block
+// 		float right
+// 		margin-bottom 2rem
+// 		a
+// 			width 100%
+// 			display block
+// 			float left
+// 			text-align right
+// 			text-transform uppercase
+// 			&:not(:last-child)
+// 				margin-bottom 0.7em

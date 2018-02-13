@@ -25,7 +25,7 @@
     				<div class="scene" 
     				data-id="<?= $key+1 ?>" 
     				<?php if($image->caption()->isNotEmpty()): ?>
-    				data-caption="<?= $image->caption()->kt()->escape() ?>"
+    				data-caption="<?= $image->caption()->kt()->escape() ?>" 
     				<?php endif ?>
     				data-media="<?= e($isVideo, 'video', 'image') ?>"
     				>
@@ -100,9 +100,12 @@
     		
     	</div>
     	
-    	<?php if ($project->text()->isNotEmpty()): ?>
-    		<div class="caption"><?= $project->text()->kt() ?></div>
-    	<?php endif ?>
+    	<div class="captions">
+    		<?php if ($project->text()->isNotEmpty()): ?>
+    			<div class="caption"><?= $project->text()->kt() ?></div>
+    		<?php endif ?>
+    		<div class="additional-caption"></div>
+    	</div>
     </div>
 
 	<?php endforeach ?>
