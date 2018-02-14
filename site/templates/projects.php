@@ -80,8 +80,8 @@
     							for ($i = 1000; $i <= 3000; $i += 500) $srcset .= thumb($image, array('width' => $i, 'height' => round($i/$ratio), 'crop' => true))->url() . ' ' . $i . 'w,';
     						}
     						?>
-    						<img class="media lazy lazyload"  
-    						data-flickity-lazyload="<?= $src ?>" 
+    						<img class="media lazy <?php e($key == 0, " lazyload lazypreload") ?>" 
+    						data-src="<?= $src ?>" 
     						data-srcset="<?= $srcset ?>" 
     						data-sizes="auto" 
     						data-optimumx="1.5" 

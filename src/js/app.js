@@ -12,7 +12,7 @@ $(function() {
   var app = {
     init: function() {
       console.log('Code by Tristan Bagot', 'www.tristanbagot.com');
-      $(window).resize(function(event) {
+      $(window).on('resize', function(event) {
         app.sizeSet();
       });
       $(document).ready(function($) {
@@ -26,9 +26,9 @@ $(function() {
           //esc
           if (e.keyCode === 27) app.goBack();
         });
-      document.addEventListener('lazybeforeunveil', function(e) {
-        e.target.parentNode.classList.add("loaded");
-      });
+        document.addEventListener('lazybeforeunveil', function(e) {
+          e.target.parentNode.classList.add("loaded");
+        });
       });
     },
     sizeSet: function() {
@@ -40,10 +40,10 @@ $(function() {
         h = w / ratio;
         $(this).find(".post").height(h);
       });
-      if (width <= 1024)
+      if (width < 768)
         isMobile = true;
       if (isMobile) {
-        if (width >= 1024) {
+        if (width >= 768) {
           //location.reload();
           isMobile = false;
         }
@@ -60,7 +60,9 @@ $(function() {
         svg.style.top = event.pageY - parentOffset.top + "px";
         svg.style.left = event.pageX - parentOffset.left + "px";
       });
-      $(".loader").hide();
+      setTimeout(function() {
+        document.getElementById('loader').style.display = 'none';
+      }, 200);
     },
     texts: function() {
 
@@ -217,14 +219,15 @@ $(function() {
           slider = new Flickity(elm, {
             cellSelector: '.scene',
             imagesLoaded: true,
-            lazyLoad: 1,
+            lazyLoad: false,
             setGallerySize: false,
-            percentPosition: false,
+            // percentPosition: false,
             accessibility: true,
             wrapAround: true,
-            prevNextButtons: !isMobile,
+            prevNextButtons: !Modernizr.touchevents,
             pageDots: false,
-            draggable: isMobile
+            draggable: Modernizr.touchevents,
+            dragThreshold: 30
           });
           slider.slidesCount = slider.slides.length;
           if (slider.slidesCount < 1) return; // Stop if no slides
@@ -245,6 +248,9 @@ $(function() {
               this.next();
             }
           });
+          if (slider.selectedElement) {
+            slider.element.parentNode.querySelector(".additional-caption").innerHTML = slider.selectedElement.getAttribute("data-caption");
+          }
           if (players.length > 0) {
             slider.on('select', function() {
               $.each(players, function() {
