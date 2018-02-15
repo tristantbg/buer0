@@ -7,7 +7,7 @@ var width = $(window).width(),
   slider,
   players = [],
   $mouseNav,
-  $root = '/stage';
+  $root = '';
 $(function() {
   var app = {
     init: function() {
@@ -27,7 +27,7 @@ $(function() {
           if (e.keyCode === 27) app.goBack();
         });
         document.addEventListener('lazybeforeunveil', function(e) {
-          e.target.parentNode.classList.add("loaded");
+          $(e.target).parents(".post")[0].classList.add("loaded");
         });
       });
     },

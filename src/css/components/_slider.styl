@@ -60,6 +60,8 @@
 	height auto
 	position relative
 	hideselect()
+	&:not(.loaded)
+		background $lightgrey
 	.flickity-slider
 		width 100%
 		height 100%
@@ -73,8 +75,6 @@
 			display flex
 			justify-content center
 			align-items center
-			&:not(.loaded)
-				background $lightgrey
 			img
 				width 100%
 				height 100%
