@@ -15,7 +15,12 @@
 	?>
 
     <div class="slider" data-ratio="<?= $ratio ?>" style="<?= $style ?>">
+		
+		<button class="flickity-prev-next-button touch previous" type="button" aria-label="previous"><svg viewBox="0 0 100 100" ><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg></button>
+		<button class="flickity-prev-next-button touch next" type="button" aria-label="next"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button>
+    	
     	<div class="post">
+    	
     	
     		<?php foreach ($medias as $key => $image): ?>
     	

@@ -6,6 +6,54 @@
 		padding 0 $paddingMobile !important
 		margin-bottom ($paddingMobile*4)
 
+
+.flickity-prev-next-button
+	height 100%
+	background transparent
+	padding 0
+	border none
+	border-radius 0
+	z-index 10
+	top 0
+	transform none
+	svg
+		align()
+		width 1.8rem
+		height 1.8rem
+		+below($sm)
+			width 1.2rem
+			height 1.2rem
+		path
+			fill $lightgrey
+	&.previous
+		left 0
+	&.next
+		right 0
+	&.touch
+		display none
+	&:focus
+		outline none
+		box-shadow none
+	&:hover
+		background transparent
+
+.touchevents
+	.slider
+		position relative
+		.flickity-prev-next-button.touch
+			display block
+			width $paddingMobile
+			svg
+				display block !important
+
+.no-touchevents
+	.flickity-prev-next-button
+		cursor none !important
+		width 50%
+		&:not(:hover)
+			svg
+				visibility hidden
+
 .post
 	span(1)
 	overflow hidden
@@ -49,26 +97,6 @@
 				width 100%
 				height 100%
 				object-fit cover
-	.flickity-prev-next-button
-		cursor none !important
-		width 50%
-		height 100%
-		background transparent
-		padding 0
-		border none
-		border-radius 0
-		z-index 10
-		+below($md)
-			display none
-		&:not(:hover)
-			svg
-				visibility hidden
-		svg
-			align()
-			width 1.8rem
-			height 1.8rem
-			path
-				fill $lightgrey
 		&.previous
 			left 0
 		&.next
