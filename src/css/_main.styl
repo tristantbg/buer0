@@ -74,3 +74,11 @@ video::-webkit-media-controls
 
 #page-content
 	span(1)
+
+#page-content.default
+	span(1)
+	padding 0 ($padding*2)
+	margin-bottom ($padding*4)
+	+below($md)
+		padding 0 $paddingMobile !important
+		margin-bottom ($paddingMobile*4)
