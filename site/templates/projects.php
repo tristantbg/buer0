@@ -90,9 +90,9 @@
     						data-srcset="<?= $srcset ?>" 
     						data-sizes="auto" 
     						data-optimumx="1.5" 
-    						alt="<?= $project->title()->html().' - © '.$site->title()->html() ?>" height="100%" width="auto" />
+    						alt="<?= $project->title()->html().', © '.$site->title()->html() ?>" height="100%" width="auto" />
     						<noscript>
-    							<img src="<?= thumb($image, array('width' => 1500))->url() ?>" alt="<?= $project->title()->html().' - © '.$site->title()->html() ?>" width="100%" height="auto" />
+    							<img src="<?= thumb($image, array('width' => 1500))->url() ?>" alt="<?= $project->title()->html().', © '.$site->title()->html() ?>" width="100%" height="auto" />
     						</noscript>
     					</div>
     				<?php endif ?>

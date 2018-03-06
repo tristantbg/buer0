@@ -82,7 +82,7 @@ $(function() {
         component.classList.remove("active");
 
         function transitionEnd(event) {
-          if (event.propertyName === 'max-height') {
+          if (event.propertyName === 'height') {
             if (component.classList.contains(collapsingCss)) {
               component.classList.remove(collapsingCss);
               component.classList.add(collapsedCss);
@@ -92,17 +92,17 @@ $(function() {
           }
         }
 
-        content.style.maxHeight = 'none';
+        content.style.height = 'auto';
         var BCR = content.getBoundingClientRect(),
           height = BCR.height;
 
-        content.style.maxHeight = height + 'px';
+        content.style.height = height + 'px';
 
         content.addEventListener(eventNameTransitionEnd, transitionEnd, false);
 
         content.offsetHeight; // reflow to apply transition animation
 
-        content.style.maxHeight = '0px';
+        content.style.height = '0px';
         content.classList.remove('opened');
       }
 
@@ -117,30 +117,30 @@ $(function() {
         component.classList.add("active");
 
         function transitionEnd(event) {
-          if (event.propertyName === 'max-height') {
+          if (event.propertyName === 'height') {
 
             if (component.classList.contains(expandingCss)) {
               component.classList.remove(expandingCss);
               component.classList.add(expandedCss);
 
-              content.style.maxHeight = '';
+              content.style.height = '';
             }
 
             content.removeEventListener(eventNameTransitionEnd, transitionEnd, false);
           }
         }
 
-        content.style.maxHeight = 'none';
+        content.style.height = 'auto';
 
         var BCR = content.getBoundingClientRect();
 
-        content.style.maxHeight = '0px';
+        content.style.height = '0px';
 
         content.addEventListener(eventNameTransitionEnd, transitionEnd, false);
 
         content.offsetHeight; // reflow to apply transition animation
 
-        content.style.maxHeight = BCR.height + 'px';
+        content.style.height = BCR.height + 'px';
         content.classList.add('opened');
       }
       var headerLinks = document.querySelectorAll('#menu a[data-target]');
