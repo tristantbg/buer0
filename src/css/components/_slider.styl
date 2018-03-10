@@ -88,6 +88,18 @@
 			height 100%
 			.plyr--video
 				height 100%
+				.video-poster
+					position absolute
+					top 0
+					left 0
+					width 100%
+					height 100%
+					z-index 1
+					+below($md)
+						display none
+				&.plyr--playing
+					.video-poster
+						visibility hidden
 				&.plyr--vimeo, &.plyr--youtube
 					.plyr__video-wrapper.plyr__video-embed
 						+below($md)

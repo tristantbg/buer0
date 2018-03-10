@@ -182,7 +182,6 @@ $(function() {
             });
             hls[i].loadSource(vids[i].getAttribute("data-stream"));
             hls[i].attachMedia(vids[i]);
-            vids[i].setAttribute('poster', '');
           }
         }
       }
@@ -192,6 +191,11 @@ $(function() {
         controls: ['play-large'],
         iconUrl: $root + "/assets/css/plyr/plyr.svg"
       });
+      for (var j = vids.length - 1; j >= 0; j--) {
+          $("<img class='lazy lazyload video-poster' data-src='"+vids[j].getAttribute('poster')+"'>").insertAfter(vids[j]);
+          // if (vids[j].getAttribute("data-stream"))
+          //   vids[j].setAttribute('poster', '');
+        }
     // for (var i = players.length - 1; i >= 0; i--) {
     //   players[i].on('play', function(event) {
     //     slider.element.classList.remove('play')
@@ -268,14 +272,16 @@ $(function() {
         }
         if (players.length > 0) {
           slider.on('select', function() {
+            var isSameIndex = slider.currentIndex == this.selectedIndex;
             $.each(players, function() {
-              this.pause();
+              if(!isSameIndex) this.pause();
             });
             this.element.classList.remove('play', 'pause');
             var svgs = this.element.querySelectorAll(".flickity-prev-next-button svg");
             for (var i = 0; i < svgs.length; i++) {
               svgs[i].style.display = "none";
             }
+            slider.currentIndex = this.selectedIndex;
           });
         // if (slider.selectedElement.getAttribute("data-media") == "video") {
         //   if (typeof hls !== "undefined" && typeof hls[0] !== "undefined") {
