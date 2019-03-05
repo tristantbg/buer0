@@ -4,9 +4,10 @@ module.exports = function(grunt) {
             plugins: {
                 src: [
                 'site/plugins/embed/assets/js/embed.js',
-                'node_modules/flickity/dist/flickity.pkgd.min.js', 
+                'node_modules/flickity/dist/flickity.pkgd.js', 
                 'node_modules/hls.js/dist/hls.light.min.js', 
                 'node_modules/plyr/dist/plyr.js', 
+                'node_modules/infinite-scroll/dist/infinite-scroll.pkgd.js', 
                 //'node_modules/lazysizes/plugins/object-fit/ls.object-fit.min.js', 
                 'node_modules/lazysizes/lazysizes.min.js', 
                 'node_modules/lazysizes/plugins/optimumx/ls.optimumx.min.js', 

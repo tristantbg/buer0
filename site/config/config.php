@@ -29,6 +29,10 @@ of the system, please check out http://getkirby.com/docs/advanced/options
 
 */
 
+c::set('kirby.cloudinary', false);
+c::set('kirby.cloudinary.default_params', ["color_space" => "srgb", "quality" => 90, "fetch_format" => "auto"]);
+c::set('kirby.cloudinary.fetch_id', 'thumbs');
+
 c::set('home', 'projects');
 c::set('debug', true);
 c::set('autobuster', true);

@@ -2,6 +2,9 @@ title: Project
 files: true
 pages: false
 files:
+  width: 6000
+  height: 6000
+  size: 9000000
   fields:
     caption:
       label: Caption

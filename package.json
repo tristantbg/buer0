@@ -14,8 +14,9 @@
     "rupture": "*"
   },
   "dependencies": {
-    "flickity": "^2.0.8",
+    "flickity": "2.0.8",
     "hls.js": "^0.8.9",
+    "infinite-scroll": "^3.0.5",
     "lazysizes": "^4.0.1",
     "normalize.css": "^7.0.0",
     "plyr": "^2.0.18",

@@ -220,7 +220,7 @@ esprima@^2.6.0:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
 
-ev-emitter@^1.0.1, ev-emitter@^1.0.2:
+ev-emitter@^1.0.1, ev-emitter@^1.0.2, ev-emitter@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ev-emitter/-/ev-emitter-1.1.1.tgz#8f18b0ce5c76a5d18017f71c0a795c65b9138f2a"
 
@@ -267,22 +267,23 @@ findup-sync@~0.3.0:
   dependencies:
     glob "~5.0.0"
 
-fizzy-ui-utils@^2.0.0:
+fizzy-ui-utils@^2.0.0, fizzy-ui-utils@^2.0.5:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/fizzy-ui-utils/-/fizzy-ui-utils-2.0.7.tgz#7df45dcc4eb374a08b65d39bb9a4beedf7330505"
   dependencies:
     desandro-matches-selector "^2.0.0"
 
-flickity@^2.0.8:
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/flickity/-/flickity-2.0.11.tgz#cc31d6d3481972a4da3d8ae58ffa0f9c4c8cc0d0"
+flickity@2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/flickity/-/flickity-2.0.8.tgz#7b1dd65d2844def1eae8c2849b4725a67a71fa2c"
+  integrity sha512-2UETFImG/e+gdcYP5umBpH4HYBlLL5jdBD73ZXAroGrcalT1Pt81jhRay25F8rh3ObC+jSYcsqWWZVynDNux0Q==
   dependencies:
     desandro-matches-selector "^2.0.0"
     ev-emitter "^1.0.2"
     fizzy-ui-utils "^2.0.0"
     get-size "^2.0.0"
     tap-listener "^2.0.0"
-    unidragger "^2.2.3"
+    unidragger "^2.1.0"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
@@ -524,6 +525,14 @@ indent-string@^2.1.0:
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-2.1.0.tgz#8e2d48348742121b4a8218b7a137e9a52049dc80"
   dependencies:
     repeating "^2.0.0"
+
+infinite-scroll@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/infinite-scroll/-/infinite-scroll-3.0.5.tgz#a50113ba4b44d7fe358df1812d6093d89c4b3888"
+  integrity sha512-O4nZUn+eXx+O/9ffVZtiHJBaR0D3COqChsl3rt4OO1VgKaTR/aHucNe58fCkf49mPcw78uBGWY3d87IW8qLVHQ==
+  dependencies:
+    ev-emitter "^1.1.0"
+    fizzy-ui-utils "^2.0.5"
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -1000,6 +1009,7 @@ supports-color@^2.0.0:
 tap-listener@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/tap-listener/-/tap-listener-2.0.0.tgz#d2e11d0d8e7c92b26a56ae4f35538a248b44ad63"
+  integrity sha1-0uEdDY58krJqVq5PNVOKJItErWM=
   dependencies:
     unipointer "^2.1.0"
 
@@ -1047,15 +1057,17 @@ underscore.string@~3.3.4:
     sprintf-js "^1.0.3"
     util-deprecate "^1.0.2"
 
-unidragger@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/unidragger/-/unidragger-2.2.3.tgz#a618801b9b629e1045e3d3793713e7add0a1e16b"
+unidragger@^2.1.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/unidragger/-/unidragger-2.3.0.tgz#ab9d9fd62106f3252d88fae5f3a99575e6d31d02"
+  integrity sha512-dVkSqQdwcsaNmXaandBAOcJ4QVvkrDPosfCcZ7opYPkAiisCQaGlNw0pg00lBV4MQoWEXsEaiwhtQlbnvlXrQQ==
   dependencies:
-    unipointer "^2.2.0"
+    unipointer "^2.3.0"
 
-unipointer@^2.1.0, unipointer@^2.2.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/unipointer/-/unipointer-2.2.1.tgz#05f9adaac92c0e6e6ed41ce85adab26166b03ee6"
+unipointer@^2.1.0, unipointer@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/unipointer/-/unipointer-2.3.0.tgz#ba0dc462ce31c2a88e80810e19c3bae0ce47ed9f"
+  integrity sha512-m85sAoELCZhogI1owtJV3Dva7GxkHk2lI7A0otw3o0OwCuC/Q9gi7ehddigEYIAYbhkqNdri+dU1QQkrcBvirQ==
   dependencies:
     ev-emitter "^1.0.1"
 

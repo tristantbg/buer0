@@ -3,7 +3,7 @@
 return function ($site, $pages, $page) {
 	$title = $page->title()->html();
 	$texts = $pages->visible()->filterBy('intendedTemplate', 'default');
-	$projects = $page->children()->visible();
+	$projects = $page->children()->visible()->paginate(5);
 
 	return array(
 	'title' => $title,

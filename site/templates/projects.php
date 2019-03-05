@@ -39,9 +39,9 @@
     					<div class="content video <?= $image->contentSize() ?>">
     						<?php 
     						if ($key == 0) {
-    							$poster = thumb($image, array('width' => 1500))->url();
+    							$poster = $image->cl_thumb(array('width' => 1000));
     						} else {
-    							$poster = thumb($image, array('width' => 1500, 'height' => round(1500/$ratio), 'crop' => true))->url();
+    							$poster = $image->cl_crop(1000, round(1000/$ratio));
     						}
     	
     						if ($image->videostream()->isNotEmpty() || $image->videoexternal()->isNotEmpty() || $image->videofile()->isNotEmpty()) {
@@ -77,22 +77,23 @@
     						<?php 
     						$srcset = '';
     						if ($key == 0) {
-    							$src = $image->width(1000)->url();
-    							for ($i = 1000; $i <= 3000; $i += 500) $srcset .= $image->width($i)->url() . ' ' . $i . 'w,';
+    							// $placeholder = $image->thumb(array('width' => 50))->dataURI();
+    							$src = $image->cl_thumb(array('width' => 1000));
+    							for ($i = 1000; $i <= 2000; $i += 500) $srcset .= $image->cl_thumb(array('width' => $i)) . ' ' . $i . 'w,';
     						}
     						else {
-    							$src = thumb($image, array('width' => 1000, 'height' => round(1000/$ratio), 'crop' => true))->url();
-    							for ($i = 1000; $i <= 3000; $i += 500) $srcset .= thumb($image, array('width' => $i, 'height' => round($i/$ratio), 'crop' => true))->url() . ' ' . $i . 'w,';
+    							$src = $image->cl_crop(1000, round(1000/$ratio));
+    							for ($i = 1000; $i <= 2000; $i += 500) $srcset .= $image->cl_crop($i, round($i/$ratio)) . ' ' . $i . 'w,';
     						}
     						?>
     						<img class="media lazy <?php e($key == 0, " lazyload lazypreload") ?>" 
-    						data-src="<?= $src ?>" 
+    						src="<?= $src ?>" 
     						data-srcset="<?= $srcset ?>" 
     						data-sizes="auto" 
     						data-optimumx="1.5" 
     						alt="<?= $project->title()->html().', © '.$site->title()->html() ?>" height="100%" width="auto" />
     						<noscript>
-    							<img src="<?= thumb($image, array('width' => 1500))->url() ?>" alt="<?= $project->title()->html().', © '.$site->title()->html() ?>" width="100%" height="auto" />
+    							<img src="<?= $image->cl_thumb(array('width' => 1500)) ?>" alt="<?= $project->title()->html().', © '.$site->title()->html() ?>" width="100%" height="auto" />
     						</noscript>
     					</div>
     				<?php endif ?>
@@ -114,6 +115,8 @@
     </div>
 
 	<?php endforeach ?>
+
+	<?php snippet('pagination', ['posts' => $projects]) ?>
 
 </div>
 
